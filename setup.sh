@@ -1,15 +1,19 @@
 #!/bin/bash
 
-# Installations
+# Installations -----------
+# git
 sudo apt install git
+git config --global user.email "daniel.moniz@gmail.com"
+git config --global user.name "Daniel Moniz"
+
 sudo apt install openssh-client openssh-server
 sudo apt install xclip
 
-# Start services
+# Start services -----------
 service ssh start
 service --status-all | grep ssh # check that ssh service is started
 
-# Add structure
+# Add structure and aliases ----------
 cd ~/
 mkdir dev
 cd dev/
@@ -19,7 +23,7 @@ echo 'alias pbcopy="xclip -i -sel c -f |xclip -i -sel p"' >> ~/.bashrc
 echo 'alias gs="git status"' >> ~/.bashrc
 source ~/.bashrc 
 
-# SSH setup
+# SSH setup --------------
 ssh-keygen -t rsa -b 4096 -C "daniel.moniz@gmail.com"
 ssh-add ~/.ssh/id_rsa
 cat ~/.ssh/id_rsa.pub | pbcopy
@@ -27,7 +31,7 @@ cat ~/.ssh/id_rsa.pub | pbcopy
 ssh -T git@github.com # Check that github connection works
 
 
-# Clone repositories
+# Clone repositories -------------
 git clone https://github.com/danielmoniz/linux_bootstrap # Should already have this!
 git clone git@github.com:danielmoniz/rl_replay_data.git
 
