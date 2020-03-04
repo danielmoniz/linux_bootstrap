@@ -32,6 +32,13 @@ ssh -T git@github.com # Check that github connection works
 
 
 # Clone repositories -------------
-git clone https://github.com/danielmoniz/linux_bootstrap # Should already have this!
-git clone git@github.com:danielmoniz/rl_replay_data.git
+# git clone https://github.com/danielmoniz/linux_bootstrap # Should already have this!
+# git clone git@github.com:danielmoniz/rl_replay_data.git
 
+# pyenv
+curl https://pyenv.run | bash
+echo 'export PATH="/home/daniel/.pyenv/bin:$PATH"' >> ~/.bashrc
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
+source ~/.bashrc
+pyenv update
