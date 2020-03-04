@@ -35,6 +35,7 @@ ssh -T git@github.com # Check that github connection works
 # git clone https://github.com/danielmoniz/linux_bootstrap # Should already have this!
 # git clone git@github.com:danielmoniz/rl_replay_data.git
 
+# Python setup -----
 # pyenv
 curl https://pyenv.run | bash
 echo 'export PATH="/home/daniel/.pyenv/bin:$PATH"' >> ~/.bashrc
@@ -43,3 +44,5 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.bashrc
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl git
 source ~/.bashrc
 pyenv update
+
+pip install virtualenv
